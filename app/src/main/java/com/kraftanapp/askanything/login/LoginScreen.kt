@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.kraftanapp.askanything.Routes
 import com.kraftanapp.askanything.ui.theme.Purple700
 
 @Composable
@@ -69,7 +70,9 @@ fun LoginScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
-                onClick = { },
+                onClick = {
+                    navController.navigate(Routes.Dashboard.route)
+                },
                 shape = RoundedCornerShape(50.dp),
                 modifier = Modifier
                     .fillMaxWidth()

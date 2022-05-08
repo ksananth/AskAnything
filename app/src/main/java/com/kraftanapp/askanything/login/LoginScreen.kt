@@ -25,7 +25,7 @@ import androidx.navigation.NavHostController
 import com.kraftanapp.askanything.ui.theme.Purple700
 
 @Composable
-fun LoginPage(navController: NavHostController) {
+fun LoginScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize()) {
         ClickableText(
             text = AnnotatedString("Sign up here"),

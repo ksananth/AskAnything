@@ -4,7 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.kraftanapp.askanything.login.LoginPage
+import com.kraftanapp.askanything.dashboard.DashboardScreen
+import com.kraftanapp.askanything.login.LoginScreen
 
 @Composable
 fun ScreenMain() {
@@ -12,7 +13,8 @@ fun ScreenMain() {
 
     NavHost(navController = navController, startDestination = Routes.Login.route) {
         composable(Routes.Login.route) {
-            LoginPage(navController = navController)
+            LoginScreen(navController = navController)
+            DashboardScreen(navController = navController)
         }
     }
 }

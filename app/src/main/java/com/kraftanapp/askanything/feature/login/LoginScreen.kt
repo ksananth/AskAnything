@@ -75,7 +75,11 @@ fun LoginScreen(navController: NavHostController) {
             Button(
                 onClick = {
                     sessionApi.loggedIn()
-                    navController.navigate(Routes.Dashboard.route)
+                    navController.navigate(Routes.Dashboard.route) {
+                        popUpTo(Routes.Login.route) {
+                            inclusive = true
+                        }
+                    }
                 },
                 shape = RoundedCornerShape(50.dp),
                 modifier = Modifier

@@ -1,4 +1,4 @@
-package com.kraftanapp.askanything.login
+package com.kraftanapp.askanything.feature.login
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape

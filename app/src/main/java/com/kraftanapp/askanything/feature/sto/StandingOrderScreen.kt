@@ -1,4 +1,4 @@
-package com.kraftanapp.askanything.sto
+package com.kraftanapp.askanything.feature.sto
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController

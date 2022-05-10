@@ -11,6 +11,7 @@ import com.kraftanapp.askanything.feature.dashboard.DashboardScreen
 import com.kraftanapp.askanything.feature.directdebit.DirectDebitScreen
 import com.kraftanapp.askanything.feature.login.LoginScreen
 import com.kraftanapp.askanything.feature.sto.StandingOrderScreen
+import com.kraftanapp.askanything.feature.transfer.TransferConfirmScreen
 import com.kraftanapp.askanything.feature.transfer.TransferScreen
 
 @Composable
@@ -26,6 +27,9 @@ fun ScreenMain() {
         }
         composable(Routes.Transfer.route) {
             TransferScreen(navController = navController)
+        }
+        composable(Routes.TransferConfirm.route) {
+            TransferConfirmScreen(navController = navController)
         }
         composable(Routes.StandingOrder.route) {
             StandingOrderScreen(navController = navController)

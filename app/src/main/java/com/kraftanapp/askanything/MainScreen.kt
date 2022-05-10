@@ -20,10 +20,10 @@ fun ScreenMain() {
         composable(Routes.Dashboard.route) {
             DashboardScreen(navController = navController)
         }
-        composable(Routes.Dashboard.route) {
+        composable(Routes.Transfer.route) {
             TransferScreen(navController = navController)
         }
-        composable(Routes.Dashboard.route) {
+        composable(Routes.StandingOrder.route) {
             StandingOrderScreen(navController = navController)
         }
     }

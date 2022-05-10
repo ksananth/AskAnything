@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AskAnything</string>
+
+    <string name="transfer">Transfer</string>
+    <string name="sto">Standing Order</string>
+    <string name="dd">Direct Debits</string>
+    <string name="beneficiary">Beneficiary</string>
+    <string name="cards">Cards</string>
+    <string name="contact">Contact us</string>
 </resources>

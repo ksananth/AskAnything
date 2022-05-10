@@ -2,5 +2,13 @@ package com.kraftanapp.askanything
 
 object SessionRepository {
 
-    val isLoggedIn = false
+    fun loggedIn() {
+        isLoggedIn = true
+    }
+
+    fun logOut() {
+        isLoggedIn = false
+    }
+
+    var isLoggedIn = false
 }

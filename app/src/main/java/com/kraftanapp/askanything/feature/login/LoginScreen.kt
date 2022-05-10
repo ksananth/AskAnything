@@ -23,10 +23,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.kraftanapp.askanything.Routes
+import com.kraftanapp.askanything.SessionRepository
 import com.kraftanapp.askanything.ui.theme.Purple700
+import org.koin.androidx.compose.get
 
 @Composable
 fun LoginScreen(navController: NavHostController) {
+    val sessionApi = get<SessionRepository>()
     Box(modifier = Modifier.fillMaxSize()) {
         ClickableText(
             text = AnnotatedString("Sign up here"),
@@ -71,6 +74,7 @@ fun LoginScreen(navController: NavHostController) {
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
                 onClick = {
+                    sessionApi.loggedIn()
                     navController.navigate(Routes.Dashboard.route)
                 },
                 shape = RoundedCornerShape(50.dp),

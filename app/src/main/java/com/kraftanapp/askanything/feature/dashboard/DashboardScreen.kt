@@ -20,6 +20,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.kraftanapp.askanything.R
 import com.kraftanapp.askanything.Routes
+import com.kraftanapp.askanything.SessionRepository
+import org.koin.androidx.compose.get
 
 private const val TRANSFER = 1
 private const val STO = 2
@@ -31,6 +33,8 @@ private const val CONTACT = 6
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterialApi::class)
 @Composable
 fun DashboardScreen(navController: NavHostController) {
+    val sessionApi = get<SessionRepository>()
+    sessionApi.isLoggedIn
     val data: List<DashboardItem> = arrayListOf(
         DashboardItem(TRANSFER, R.string.transfer, Routes.Transfer),
         DashboardItem(STO, R.string.sto, Routes.StandingOrder),

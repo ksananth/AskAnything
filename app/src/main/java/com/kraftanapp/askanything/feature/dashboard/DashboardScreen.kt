@@ -1,16 +1,17 @@
 package com.kraftanapp.askanything.feature.dashboard
 
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -34,6 +35,8 @@ private const val CONTACT = 6
 @Composable
 fun DashboardScreen(navController: NavHostController) {
     val sessionApi = get<SessionRepository>()
+    val openDialog = remember { mutableStateOf(false) }
+
     sessionApi.isLoggedIn
     val data: List<DashboardItem> = arrayListOf(
         DashboardItem(TRANSFER, R.string.transfer, Routes.Transfer),
@@ -66,7 +69,45 @@ fun DashboardScreen(navController: NavHostController) {
             }
         }
     }
+
+    BackHandler(enabled = true) {
+        openDialog.value = true
+    }
+
+    if (openDialog.value) {
+        AlertDialog(
+            onDismissRequest = {
+                openDialog.value = false
+            },
+            title = {
+                Text(text = "Logout")
+            },
+            text = {
+                Text("Do you want to logout app?")
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        openDialog.value = false
+                        sessionApi.logOut()
+                        navController.navigateUp()
+                    }) {
+                    Text("Ok")
+                }
+            },
+            dismissButton = {
+                Button(
+
+                    onClick = {
+                        openDialog.value = false
+                    }) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
 }
+
 
 private data class DashboardItem(val id: Int, val name: Int, val navigate: Routes)
 

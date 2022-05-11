@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="active_features">
+        <item>transfer</item>
+        <item>standing order</item>
+        <item>beneficiary</item>
+        <item>direct debits</item>
+    </array>
+
+</resources>

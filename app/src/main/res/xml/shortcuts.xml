@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a sample shortcuts.xml -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="features"
+        android:shortcutShortLabel="@string/feature_label"
+        android:enabled="false">
+        <capability-binding
+            android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:key="feature"
+                android:value="@array/active_features" />
+        </capability-binding>
+    </shortcut>
+
+    <!--
+        Be sure to replace all occurrences of PUT_YOUR_APPLICATION_ID_HERE with the
+        application ID you specified in app/build.gradle.
+    -->
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.kraftanapp.askanything"
+            android:targetClass="com.kraftanapp.askanything.MainActivity">
+            <parameter
+                android:name="feature"
+                android:key="feature"/>
+        </intent>
+    </capability>
+</shortcuts>

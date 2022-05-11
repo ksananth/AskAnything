@@ -7,4 +7,6 @@
     <string name="beneficiary">Beneficiary</string>
     <string name="cards">Cards</string>
     <string name="contact">Contact us</string>
+    <string name="shortcut_short_label">test</string>
+    <string name="feature_label">features</string>
 </resources>

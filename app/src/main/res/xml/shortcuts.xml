@@ -2,9 +2,9 @@
 <!-- This is a sample shortcuts.xml -->
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
-        android:shortcutId="features"
-        android:shortcutShortLabel="@string/feature_label"
-        android:enabled="false">
+        android:shortcutId="feature"
+        android:shortcutShortLabel="@string/shortcut_short_label"
+        android:enabled="true">
         <capability-binding
             android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding

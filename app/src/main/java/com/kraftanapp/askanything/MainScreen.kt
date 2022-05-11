@@ -13,10 +13,12 @@ import com.kraftanapp.askanything.feature.login.LoginScreen
 import com.kraftanapp.askanything.feature.sto.StandingOrderScreen
 import com.kraftanapp.askanything.feature.transfer.TransferConfirmScreen
 import com.kraftanapp.askanything.feature.transfer.TransferScreen
+import org.koin.androidx.compose.get
 
 @Composable
-fun ScreenMain() {
+fun ScreenMain(openApp: OpenApp?) {
     val navController = rememberNavController()
+    val sessionApi = get<SessionRepository>()
 
     NavHost(navController = navController, startDestination = Routes.Login.route) {
         composable(Routes.Login.route) {

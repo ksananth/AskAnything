@@ -2,7 +2,7 @@
 <!-- This is a sample shortcuts.xml -->
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
-        android:shortcutId="feature"
+        android:shortcutId="featurename"
         android:shortcutShortLabel="@string/shortcut_short_label"
         android:enabled="true">
         <capability-binding

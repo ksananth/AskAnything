@@ -20,7 +20,20 @@ fun ScreenMain(openApp: OpenApp?) {
     val navController = rememberNavController()
     val sessionApi = get<SessionRepository>()
 
-    NavHost(navController = navController, startDestination = Routes.Login.route) {
+    val startDestination = if (openApp is OpenApp.Shortcut) {
+        when (openApp.feature) {
+            Feature.BENEFICIARY -> Routes.Beneficiary.route
+            Feature.CARDS -> Routes.Cards.route
+            Feature.CONTACT -> Routes.Contact.route
+            Feature.DIRECT_DEBIT -> Routes.DirectDebit.route
+            Feature.STANDING_ORDER -> Routes.StandingOrder.route
+            is Feature.Transfer -> Routes.Transfer.route
+        }
+    } else {
+        Routes.Login.route
+    }
+
+    NavHost(navController = navController, startDestination = startDestination) {
         composable(Routes.Login.route) {
             LoginScreen(navController = navController)
         }
